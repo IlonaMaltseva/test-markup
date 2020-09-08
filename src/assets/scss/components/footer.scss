@@ -1,0 +1,168 @@
+.footer{
+	background: #f6f6f2;
+	padding: 40px 0;
+	@include breakpoint ("large") {
+		padding: 65px 0 50px;
+	}
+    .container{
+        max-width:1347px;
+	}
+}
+
+.upper-footer{
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid #d7d9e2;
+	margin-bottom: 10px;
+	padding-bottom: 40px;
+	@include breakpoint ("large") {
+		flex-direction: row;
+		padding-bottom: 60px;
+	}
+	.topics-item,
+	.about-item,
+	.follow-item{
+		width: 100%;
+	}
+	.topics-item{
+		margin-bottom: 35px;
+		@include breakpoint ("large") {
+			width: 45%;
+			margin-bottom: 0;
+		}
+	}
+	.about-item{
+		margin-bottom: 35px;
+		@include breakpoint ("large") {
+			width: 23%;
+			margin: 0;
+		}
+	}
+	.follow-item{
+		max-width: 365px;
+		@include breakpoint ("large") {
+			width: 27.8%;
+			max-width: none;
+		}
+	}
+}
+
+.expanded{
+	display: none;
+	@include breakpoint ("large") {
+		display: block;
+	}
+}
+
+.under-footer{
+	@include flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	@include breakpoint ("large") {
+		align-items: flex-end;
+		flex-direction: row;
+	}
+}
+
+.copy{
+	font-size: 12px;
+	color: #404554;
+	@include breakpoint ("large") {
+		font-size: 16px;
+		line-height: 2.1;
+	}
+	a{
+		font-weight: 700;
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+
+.company-list{
+	margin: 0 -20px 20px;
+	padding: 0;
+	list-style: none;
+	@include flex;
+	align-items: flex-end;
+	@include breakpoint ("large") {
+		margin: 0 -38px;
+	}
+	li{
+		padding: 0 20px;
+		@include breakpoint ("large") {
+			padding: 0 38px;
+		}
+	}
+}
+
+.footer-column{
+	@include flex;
+	margin: 0 -10px;
+	.item{
+		width: 50%;
+		padding: 0 10px;
+	}
+}
+
+.footer-list{
+	margin: 0;
+	padding: 0;
+	max-width: 156px;
+	font-size: 16px;
+	line-height: 1.3;
+	list-style: none;
+	li{
+		&:not(:first-child){
+			margin-top: 14px;
+		}
+	}
+	a{
+		font-weight: 500;
+		color: #404554;
+	}
+}
+
+.social-links{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li{
+		&:not(:first-child){
+			margin-top: 10px;
+		}
+	}
+	a{
+		@include flex;
+		align-items: center;
+		font-size: 14px;
+		font-weight: 600;
+		padding: 0 24px;
+		min-height: 50px;
+		border: 2px solid #e6e7ec;
+		background: #fff;
+		color: #404554;
+		@include breakpoint ("large") {
+			font-size: 16px;
+			line-height: 1.2;
+			min-height: 65px;
+		}
+		.ico{
+			@include flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			width: 32px;
+			margin-right: 20px;
+		}
+		&.subscribe-link{
+			color: #fff;
+			background: #6d1b11;;
+			border-color: #6d1b11;;
+		}
+	}
+}

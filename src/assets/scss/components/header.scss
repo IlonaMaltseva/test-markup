@@ -1,0 +1,318 @@
+.menu-holder{
+	@include breakpoint ("large") {
+		background:#6d1b11;
+		margin: 0 -9999px;
+		padding: 0 9999px;
+	}
+}
+
+.title-bar{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 101;
+	background: none;
+	padding: 0;
+}
+
+.menu-icon{
+	width: 30px;
+	height: 20px;
+	outline: none;
+	&:after,&:before{
+		position:absolute;
+		content:'';
+		left:0;
+		right:0;
+		height:2px;
+		background: #000;
+		box-shadow:none;
+		transition:all .35s ease;
+	}
+	&:after{top:0;}
+	&:before{bottom:0;}
+	span{
+		position:absolute;
+		text-indent:-9999px;
+		overflow:hidden;
+		top:50%;
+		left:0;
+		right:0;
+		height:2px;
+		margin-top:-1px;
+		background:#000;
+	}
+	&:hover{
+		&::after{
+			box-shadow:none;
+			background: #000;
+		}
+	}
+}
+
+.header{
+	.container{
+		max-width:1365px;
+	}
+}
+
+.logo{
+	flex-shrink: 0;
+	margin: 0 0 20px;
+	width: 280px;
+	@include breakpoint ("large") {
+		width: 325px;
+		margin: 0 30px 0 0;
+	}
+	a{
+		display: block;
+	}
+}
+
+.top-header{
+	@include flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 0;
+	flex-direction: column;
+	@include breakpoint ("large") {
+		padding: 20px 0 17px;
+		flex-direction: row;
+	}
+}
+
+.dropdown.menu.dropdown.menu.large-horizontal{
+ > li.is-dropdown-submenu-parent > a::after{
+		display: none;
+	}
+}
+
+.main-nav-container{
+	position: absolute;
+	z-index: 99;
+	left: 0;
+	right: 0;
+	background: #fff;
+	@include breakpoint ("large") {
+		position: relative;
+		background: none;
+	}
+}
+
+.accordion-menu{
+	.is-accordion-submenu-parent:not(.has-submenu-toggle){
+		> a::after{
+			right: 12px;
+			width:8px;
+			height:8px;
+			border: 0;
+			border-bottom:1px solid #6d1b11;
+			border-left:1px solid #6d1b11;
+			transform:rotate(-45deg);
+			@include breakpoint ("large") {
+				border-bottom:1px solid #fff;
+				border-left:1px solid #fff;
+			}
+		}
+	}
+	.is-accordion-submenu-parent[aria-expanded='true']{
+		> a::after{
+			transform: rotate(135deg);
+		}
+	}
+}
+
+
+.dropdown.menu{
+	> li.is-active{
+		> a{
+			color: #fff;
+		}
+	}
+	> li{
+		> a{
+			padding: 19px 28px;
+			@include breakpoint ("xlarge") {
+				padding: 19px 37px;
+			}
+		}
+	}
+}
+
+.nav-menu{
+	padding: 40px 0 0;
+	@include breakpoint ("large") {
+		padding: 0;
+	}
+}
+
+.is-dropdown-submenu{
+	min-width: 320px;
+	padding: 10px 0;
+}
+
+.menu{
+	>li,
+	>li.is-dropdown-submenu-parent{
+		&:hover,
+		&.current-menu-item,
+		&.current-page-ancestor,
+		&.current-menu-ancestor {
+			>a{
+				color: #000;
+				@include breakpoint ("large") {
+					background: #fff;
+					color: #fff;
+					color: #6d1b11;
+				}
+				&:before{
+					border-bottom-color: #6d1b11;
+					border-left-color: #6d1b11;
+				}
+			}
+		}
+		&:visited{
+			>a{
+				color: #000;
+				@include breakpoint ("large") {
+					color: #fff;
+				}
+			}
+		}
+	}
+	>li.is-dropdown-submenu-parent{
+		>a{
+			&:before{
+				content:'';
+				position:absolute;
+				top:50%;
+				right: 8px;
+				width:8px;
+				height:8px;
+				opacity: 0.5;
+				margin-top: -2px;
+				opacity: 1;
+				border-bottom:1px solid #6d1b11;;
+				border-left:1px solid #6d1b11;;
+				transform:rotate(-45deg) translateY(-50%);
+				transition: all .35s ease;
+				@include breakpoint ("large") {
+					border-bottom:1px solid #fff;
+					border-left:1px solid #fff;
+				}
+			}
+		}
+	}
+	a{
+		display: block;
+		font-size: 16px;
+		line-height: 1.2;
+		color: #000;
+		outline: none;
+		@include breakpoint ("large") {
+			color: #fff;
+		}
+	}
+	&.submenu{
+		a{
+			color: #000;
+			&:hover{
+				@include breakpoint ("large") {
+					background: #f8f7f3;
+					color: #404554;
+				}
+			}
+		}
+	}
+}
+
+.dropdown.menu.large-horizontal{
+	> li.is-dropdown-submenu-parent{
+		> a{
+			padding-right: 28px;
+			@include breakpoint ("xlarge") {
+				padding-right: 37px;
+			}
+		}
+	}
+}
+
+.dropdown.menu{
+	> li.is-dropdown-submenu-parent{
+		> a{
+			padding-right: 28px;
+			@include breakpoint ("xlarge") {
+				padding-right: 37px;
+			}
+		}
+	}
+}
+
+.header-holder{
+	@include flex;
+	align-items: center;
+	flex-direction: column;
+	@include breakpoint ("large") {
+		flex-direction: row;
+	}
+}
+
+.search-form{
+	max-width: 400px;
+	@include breakpoint ("large") {
+		width: 400px;
+		max-width: none;
+	}
+	fieldset{
+		@include flex;
+		align-items: center;
+	}
+	.input-form{
+		position: relative;
+	}
+	.btn-search{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		color: #181726;
+		border-radius: 0 3px 3px 0;
+		padding: 0 28px;
+		z-index: 2;
+		cursor: pointer;
+		background: rgba(139, 145, 166, 0.3);
+	}
+	input[type='search']{
+		height: 38px;
+		border-radius: 3px;
+		margin: 0;
+		padding: 0 115px 0 20px;
+		box-shadow: none;
+		@include breakpoint ("large") {
+			height: 50px;
+		}
+	}
+}
+
+.btn-login{
+	@include flex;
+	align-items: center;
+	color: #6D1B11;
+	margin: 0 0 10px;
+	@include breakpoint ("large") {
+		margin: 0 30px 0 0;
+		font-size: 16px;
+	}
+	.ico{
+		flex-shrink: 0;
+		margin-right: 10px;
+		fill:#6D1B11;
+		transition: all .35s ease;
+	}
+	&:hover{
+		color: #000;
+		.ico{
+			fill: #000;
+		}
+	}
+}
