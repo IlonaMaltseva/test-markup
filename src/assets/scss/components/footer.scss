@@ -1,6 +1,6 @@
 .footer{
 	background: #f6f6f2;
-	padding: 40px 0;
+	padding: 40px 0 20px;
 	@include breakpoint ("large") {
 		padding: 65px 0 50px;
 	}
@@ -12,7 +12,7 @@
 .upper-footer{
 	display: flex;
 	align-items: flex-start;
-	flex-direction: column;
+	flex-wrap:wrap;
 	justify-content: space-between;
 	width: 100%;
 	border-bottom: 1px solid #d7d9e2;
@@ -22,13 +22,17 @@
 		flex-direction: row;
 		padding-bottom: 60px;
 	}
-	.topics-item,
-	.about-item,
-	.follow-item{
-		width: 100%;
-	}
+	// .topics-item,
+	// .about-item,
+	// .follow-item{
+	// 	width: 100%;
+	// }
 	.topics-item{
 		margin-bottom: 35px;
+		width: 100%;
+		@include breakpoint ("medium") {
+			width: 65%;
+		}
 		@include breakpoint ("large") {
 			width: 45%;
 			margin-bottom: 0;
@@ -36,6 +40,11 @@
 	}
 	.about-item{
 		margin-bottom: 35px;
+		width: 100%;
+		@include breakpoint ("medium") {
+			width: 35%;
+
+		}
 		@include breakpoint ("large") {
 			width: 23%;
 			margin: 0;
@@ -43,6 +52,7 @@
 	}
 	.follow-item{
 		max-width: 365px;
+		width: 100%;
 		@include breakpoint ("large") {
 			width: 27.8%;
 			max-width: none;
@@ -62,9 +72,9 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	@include breakpoint ("large") {
-		align-items: flex-end;
+	@include breakpoint ("medium") {
 		flex-direction: row;
+		align-items: flex-end;
 	}
 }
 
@@ -89,6 +99,9 @@
 	list-style: none;
 	@include flex;
 	align-items: flex-end;
+	@include breakpoint ("medium") {
+		margin-bottom: 0;
+	}
 	@include breakpoint ("large") {
 		margin: 0 -38px;
 	}
@@ -96,6 +109,13 @@
 		padding: 0 20px;
 		@include breakpoint ("large") {
 			padding: 0 38px;
+		}
+	}
+	a{
+		display: block;
+		max-width: 100px;
+		@include breakpoint ("large") {
+			max-width: none;
 		}
 	}
 }

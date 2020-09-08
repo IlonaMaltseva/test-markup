@@ -21,3 +21,33 @@ window.WebFontConfig = {
 
 
 $(document).foundation();
+
+jQuery(document).ready(function() {
+  initMobMenu();
+  initDropHover();
+});
+
+
+function initMobMenu() {
+	jQuery('.burger').on('click', function(e) {
+		e.preventDefault();
+		jQuery('body').toggleClass('menu-open');
+	});
+};
+
+function initDropHover() {
+	jQuery('.nav >ul li').each(function() {
+		if(jQuery(this).find('.drop').length){
+			jQuery(this).addClass('has-drop');
+		}
+	});
+
+	jQuery('.nav li a').on('click', function(e){
+			if(jQuery(this).siblings('.drop-menu').length && !jQuery(this).closest('li').hasClass('drop-open')){
+			e.preventDefault();
+			jQuery(this).closest('li').addClass('drop-open');
+			jQuery(this).closest('li').siblings('li.drop-open').find('li.drop-open').removeClass('drop-open');
+			jQuery(this).closest('li').siblings('li.drop-open').removeClass('drop-open');
+		}
+	});
+};

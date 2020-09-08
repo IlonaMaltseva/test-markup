@@ -131,7 +131,7 @@ h3{
 }
 
 h2{
-	font-size: 32px;
+	font-size: 30px;
 	line-height: 1.2;
 	font-weight: 700;
 	margin: 0 0 20px;
@@ -192,7 +192,7 @@ a{
 	position: relative;
 	color: #000;
 	padding-bottom: 15px;
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	@include breakpoint ("large") {
 		padding-bottom: 25px;
 		margin-bottom: 50px;
@@ -208,7 +208,7 @@ a{
 		background: #6d1b11;
 		@include breakpoint ("large") {
 			width: 60px;
-			height: 3px;
+			height: 2px;
 		}
 	}
 }
@@ -262,7 +262,12 @@ a{
 	overflow: hidden;
 	padding: 40px 0;
 	@include breakpoint ("large") {
-		padding: 80px 0;
+		padding: 80px 0 63px;
+	}
+	.title-decor{
+		@include breakpoint ("large") {
+			margin-bottom: 40px;
+		}
 	}
 }
 
@@ -289,7 +294,6 @@ input[type="search"]::-webkit-search-results-decoration {
 	@include breakpoint ("large") {
 		@include flex;
 		align-items: flex-start;
-		align-items: center;
 	}
 	.visual-holder{
 		max-width: 370px;
@@ -329,7 +333,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	li{
 		position: relative;
 		padding-left: 40px;
-		margin-bottom: 18px;
+		margin-bottom: 16px;
 		@include breakpoint ("large") {
 			padding-left: 60px;
 		}
@@ -357,14 +361,14 @@ input[type="search"]::-webkit-search-results-decoration {
 	padding: 0;
 	margin: 0;
 	list-style: none;
-	@include breakpoint ("large") {
-		margin: 0 -25px;
+	@include breakpoint ("medium") {
 		flex-direction: row;
+		margin: 0 -25px;
 	}
 	li{
-		@include breakpoint ("large") {
-			padding: 0 25px;
+		@include breakpoint ("medium") {
 			width: 50%;
+			padding: 0 25px;
 		}
 		&:first-child,
 		&:first-child + li{
@@ -377,8 +381,11 @@ input[type="search"]::-webkit-search-results-decoration {
 	}
 	.tile-wrap{
 		@include flex;
-		padding: 34px 0 37px;
+		padding: 20px 0;
 		border-top: 1px solid #e3e4ea;
+		@include breakpoint ("large") {
+			padding: 34px 0 37px;
+		}
 		h4{
 			flex: auto;
 			margin-bottom: 10px;
@@ -405,16 +412,23 @@ input[type="search"]::-webkit-search-results-decoration {
 .info-holder{
 	@include flex;
 	align-items: center;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 	flex-direction: column;
-	@include breakpoint ("large") {
+	@include breakpoint ("medium") {
 		flex-direction: row;
+		align-items: flex-start;
+	}
+	@include breakpoint ("large") {
 		margin-bottom: 77px;
 	}
 	.icon{
 		flex-shrink: 0;
 		margin: 0 0 25px;
-		@include breakpoint ("large") {
+		@include breakpoint ("medium") {
+			width: 120px;
+			margin:0 30px 0 0;
+		}
+		@include breakpoint ("xlarge") {
 			width: 168px;
 			margin:0 62px 0 0;
 		}
@@ -428,7 +442,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .brand-section{
 	padding: 40px 0;
 	@include breakpoint ("large") {
-		padding: 84px 0;
+		padding: 84px 0 40px;
+	}
+	.title-decor{
+		@include breakpoint ("large") {
+			margin-bottom: 45px;
+		}
 	}
 	h5{
 		margin-bottom: 38px;
@@ -437,7 +456,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .column-list{
 	@include breakpoint ("large") {
-		margin: 0 -40px;
+		margin: 0 -50px;
 		@include flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
@@ -445,7 +464,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	.item{
 		@include breakpoint ("large") {
 			width: 50%;
-			padding: 0 40px;
+			padding: 0 50px;
 		}
 	}
 }
@@ -454,15 +473,21 @@ input[type="search"]::-webkit-search-results-decoration {
 	overflow: hidden;
 	padding: 40px 0;
 	@include breakpoint ("large") {
-		padding: 83px 0 100px;
+		padding: 83px 0 60px;
 	}
 	.title-decor{
 		margin-bottom: 42px;
 	}
 	.title-serif{
-		margin-bottom: 55px;
+		margin-bottom: 25px;
+		@include breakpoint ("large") {
+			margin-bottom: 55px;
+		}
 	}
 	.h5{
-		margin-bottom: 48px;
+		margin-bottom: 25px;
+		@include breakpoint ("large") {
+			margin-bottom: 48px;
+		}
 	}
 }

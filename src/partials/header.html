@@ -1,8 +1,6 @@
 <header class="header">
 	<div class="container">
-		<div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="large">
-			<button class="menu-icon" type="button" data-toggle><span></span></button>
-		  </div>
+		<a class="burger" href="#"><span>Menu</span></a>
 		<div class="top-header">
 			<div class="logo">
 				<a href="#">
@@ -27,13 +25,13 @@
 			</div>
 		</div>
 		<div class="menu-holder">
-			<nav class="main-nav-container" id="example-animated-menu">
-				<ul class="vertical large-horizontal menu" data-responsive-menu="accordion large-dropdown">
+			<nav class="nav">
+				<ul class="nav-list">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">About Us</a></li>
-					<li>
+					<li class="has-drop">
 						<a href="#">Research Services</a>
-						<ul class="vertical menu">
+						<ul class="drop-menu">
 							<li><a href="#">Brand Experience & Advertising Research</a></li>
 							<li><a href="#">Customer Experience & User Research (UX)</a></li>
 							<li><a href="#">Market Segmentation & Customer Research</a></li>
@@ -42,9 +40,9 @@
 						</ul>
 					</li>
 					<li><a href="#">Clients</a></li>
-					<li>
+					<li class="has-drop">
 						<a href="#">Research Tools</a>
-						<ul class="vertical menu">
+						<ul class="drop-menu">
 							<li><a href="#">Calculators</a></li>
 							<li><a href="#">Survey Tool Review Central</a></li>
 							<li><a href="#">Market Research Glossary</a></li>
@@ -54,6 +52,22 @@
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>
+			<div class="hidden-block">
+				<a href="#" class="btn-login">
+					<svg width="15" height="15" class="ico">
+						<use xlink:href="assets/img/sprite-icons.svg#login" />
+					</svg>
+					<span>Login to Survey Tool Review Center</span>
+				</a>
+				<form action="#" class="search-form">
+					<fieldset>
+						<div class="input-form">
+							<input type="search">
+							<button class="btn-search">Search</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	</div>
 </header>
