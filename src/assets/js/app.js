@@ -25,6 +25,7 @@ $(document).foundation();
 jQuery(document).ready(function() {
   initMobMenu();
   initDropHover();
+  initHeaderFixed();
 });
 
 
@@ -49,5 +50,16 @@ function initDropHover() {
 			jQuery(this).closest('li').siblings('li.drop-open').find('li.drop-open').removeClass('drop-open');
 			jQuery(this).closest('li').siblings('li.drop-open').removeClass('drop-open');
 		}
+	});
+};
+
+
+function initHeaderFixed() {
+	jQuery(window).on('load resize scroll', function() {
+	if(jQuery(window).scrollTop() > 0){
+		jQuery('body').addClass('fixed-header');
+	} else {
+		jQuery('body').removeClass('fixed-header');
+	}
 	});
 };

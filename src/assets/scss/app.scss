@@ -84,9 +84,12 @@ body{
 	min-height:100vh;
 	position:relative;
 	width:100%;
+	@include breakpoint ("large") {
+		padding-top: 155px;
+	}
 }
 
-.container{
+.inner{
 	// max-width:1365px;
 	max-width: 1200px;
 	margin-left:auto;
@@ -123,7 +126,8 @@ h1{
 	}
 }
 
-h3{
+h3,
+.h3{
 	font-size: 25px;
 	line-height: 1.2;
 	font-weight: 700;
@@ -202,13 +206,13 @@ a{
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 80px;
-		height: 5px;
+		width: 60px;
+		height: 2px;
 		z-index: 1;
 		background: #6d1b11;
 		@include breakpoint ("large") {
-			width: 60px;
-			height: 2px;
+			width: 80px;
+			height: 5px;
 		}
 	}
 }
@@ -262,7 +266,7 @@ a{
 	overflow: hidden;
 	padding: 40px 0;
 	@include breakpoint ("large") {
-		padding: 80px 0 63px;
+		padding: 40px 0 63px;
 	}
 	.title-decor{
 		@include breakpoint ("large") {
@@ -354,24 +358,21 @@ input[type="search"]::-webkit-search-results-decoration {
 	}
 }
 
-.research-list{
+.wrap{
 	@include flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	padding: 0;
-	margin: 0;
-	list-style: none;
 	@include breakpoint ("medium") {
 		flex-direction: row;
 		margin: 0 -25px;
 	}
-	li{
+	.item{
 		@include breakpoint ("medium") {
 			width: 50%;
 			padding: 0 25px;
 		}
 		&:first-child,
-		&:first-child + li{
+		&:first-child + div{
 			.tile-wrap{
 				@include breakpoint ("large") {
 					border: none;
@@ -379,47 +380,51 @@ input[type="search"]::-webkit-search-results-decoration {
 			}
 		}
 	}
-	.tile-wrap{
+}
+.tile-wrap{
+	@include flex;
+	padding: 20px 0;
+	border-top: 1px solid #e3e4ea;
+	@include breakpoint ("large") {
+		padding: 34px 0 37px;
+	}
+	h4{
+		flex: auto;
+		margin-bottom: 10px;
+	}
+	.visual{
+		width: 70px;
+		flex-shrink: 0;
 		@include flex;
-		padding: 20px 0;
-		border-top: 1px solid #e3e4ea;
+		align-items: center;
+		justify-content: center;
+		margin-right: 20px;
 		@include breakpoint ("large") {
-			padding: 34px 0 37px;
+			width: 98px;
+			margin-right: 40px;
 		}
-		h4{
-			flex: auto;
-			margin-bottom: 10px;
-		}
-		.visual{
-			width: 70px;
-			flex-shrink: 0;
-			@include flex;
-			align-items: center;
-			justify-content: center;
-			margin-right: 20px;
-			@include breakpoint ("large") {
-				width: 98px;
-				margin-right: 40px;
-			}
-		}
-		.content{
-			@include flex;
-			flex-direction: column;
-		}
+	}
+	.content{
+		@include flex;
+		flex-direction: column;
+	}
+}
+
+.info-section{
+	padding-top: 40px;	
+	padding-bottom: 40px;
+	@include breakpoint ("large") {
+		padding: 72px 0 40px;
 	}
 }
 
 .info-holder{
 	@include flex;
 	align-items: center;
-	margin-bottom: 25px;
 	flex-direction: column;
 	@include breakpoint ("medium") {
 		flex-direction: row;
 		align-items: flex-start;
-	}
-	@include breakpoint ("large") {
-		margin-bottom: 77px;
 	}
 	.icon{
 		flex-shrink: 0;
@@ -430,6 +435,16 @@ input[type="search"]::-webkit-search-results-decoration {
 		}
 		@include breakpoint ("xlarge") {
 			width: 168px;
+			margin:0 62px 0 0;
+		}
+	}
+	.alignleft{
+		flex-shrink: 0;
+		margin: 0 0 25px;
+		@include breakpoint ("medium") {
+			margin:0 30px 0 0;
+		}
+		@include breakpoint ("xlarge") {
 			margin:0 62px 0 0;
 		}
 	}
